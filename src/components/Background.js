@@ -2,6 +2,8 @@ import React, {useState, useRef} from 'react'
 import video from '../Media/Background-video.mp4'
 import './Background.css'
 import '../App.css'
+import { motion } from 'framer-motion';
+
 
 
 const Background = () => {
@@ -26,6 +28,14 @@ const Background = () => {
             <source src={video} type="video/mp4" />
             Your browser does not support the video tag.
             </video>
+            <div className="overlay">
+            <h1 className="text-7xl font-bold text-center text-white">
+              Ikaika Nahuina
+            </h1>
+            <h2 className="text-5xl font-bold text-center text-white">
+              Software Engineer
+            </h2>
+            </div>
         </div>
     );
 }

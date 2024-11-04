@@ -1,34 +1,63 @@
-
-  /* Sidebar.css */
+/* Sidebar.css */
 
 .navigation {
-    background-color: #3498db; /* Set the background color of the navbar */
-    padding-top: 5px; /* Add some padding to the top */
-    padding-bottom: 5px;
-  }
-  
-  .navbar {
-    border: none; /* Remove the border from the navbar */
-  }
-  
-  .navbar-default .navbar-nav > li > a {
-    color: #fff; /* Set the text color */
-  }
-  
-  .navbar-default .navbar-nav > li > a:hover,
-  .navbar-default .navbar-nav > li > a:focus {
-    background-color: #2980b9; /* Set the background color on hover or focus */
-  }
-  
-  ion-icon {
-    font-size: 30px; /* Adjust the icon size */
-    margin-right: 5px; /* Add some space to the right of the icon */
-  }
-  
-  .navbar li {
-    padding: 10px;
-    text-decoration: none;
-    font-size: 18px;
-    color: white;
-    display: inline;
-  }
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.navbar {
+  border: none;
+  background-color: #1F2937;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center; /* Center navbar */
+}
+
+.navbar-default .navbar-nav {
+  display: flex;
+  gap: 25px; /* Space between buttons */
+  align-items: center; /* Center buttons with icons */
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  padding: 12px 18px; /* Padding around buttons */
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1), -3px -3px 5px rgba(255, 255, 255, 0.1);
+  transition: box-shadow 0.3s, color 0.3s;
+}
+
+.navbar-default .navbar-nav > li > a.selected {
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2), inset -2px -2px 5px rgba(255, 255, 255, 0.1);
+  color: #000; /* Color change for selected */
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2), inset -2px -2px 5px rgba(255, 255, 255, 0.1);
+}
+
+ion-icon {
+  font-size: 30px;
+  margin-right: 8px;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+.navbar li {
+  font-size: 18px;
+  color: white;
+  display: inline;
+  text-align: center;
+}
+
+/* Ensure selected item stays centered */
+.navbar li a.selected ion-icon {
+  color: #000;
+  filter: none;
+}

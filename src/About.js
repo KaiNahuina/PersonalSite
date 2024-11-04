@@ -1,11 +1,12 @@
 import React from 'react'
 import './App.css'
+import kai from './Media/kai.jpg'
 
 function About() {
   return (
-    <div className='AboutPage'>
-        <h1>About Me</h1>
-        <img href='/Users/kainahuina/portfolio-app/public/IMG_0282.jpg' alt='Kai-Headshot'></img>
+    <div className="mt-24 p-6 max-w-4xl mx-auto">
+        <h1>My Background</h1>
+        <img href={kai} alt='Kai-Headshot'></img>
 
     </div>
     

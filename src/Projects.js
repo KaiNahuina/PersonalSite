@@ -1,9 +1,8 @@
 import React from 'react'
-import Sidebar from './components/Sidebar'
 
 function Projects() {
   return (
-    <div>
+    <div className="mt-24 p-6 max-w-4xl mx-auto">
       <div><h1>Projects</h1></div>
       <div className='row justify-content-md-center'>
         <div className='col col-lg-2'>

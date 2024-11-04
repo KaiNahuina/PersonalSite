@@ -7,7 +7,7 @@ function Sidebar() {
   return (
     <div className='navigation'>
         <nav className='navbar navbar-default fixed-top'>
-            <div className='container-fluid'>
+            <div className='container-fluid justify-center'>
                 <ul className="nav navbar-nav">
                         <li>
                             <Link to="/Home">
@@ -37,6 +37,9 @@ function Sidebar() {
                     </ul>
                 </div>
             </nav>
+
+
+            
         
     </div>
   )

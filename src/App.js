@@ -8,24 +8,26 @@ import Projects from './Projects';
 import Contact from './Contact';
 import Home from './Home';
 import Sidebar from './components/Sidebar';
-import Background from './components/Background';
 
 export default function App() {
     
     return (
+      
       <div className="App">
-        <Background/>
         <div className="auto-height-container">
-            <Sidebar/>
+            <div className="sidebar">
+              <Sidebar />
+            </div>
+
             <div className="content-bg">
               <div className="content">
-              <Routes>
-                <Route path="home" element={<Home/>} />
-                <Route path="skills" element={<Skills/>} />
-                <Route path="projects" element={<Projects/>} />
-                <Route path="about" element={<About/>} />
-                <Route path="contact" element={<Contact/>} />
-              </Routes>
+                <Routes>
+                  <Route path="home" element={<Home/>} />
+                  <Route path="skills" element={<Skills/>} />
+                  <Route path="projects" element={<Projects/>} />
+                  <Route path="about" element={<About/>} />
+                  <Route path="contact" element={<Contact/>} />
+                </Routes>
               </div>
             </div>
         </div>

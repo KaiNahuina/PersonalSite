@@ -1,9 +1,8 @@
 import React from 'react'
-import Sidebar from './components/Sidebar'
 
 function Skills() {
   return (
-    <div>
+    <div className="mt-24 p-6 max-w-4xl mx-auto">
         <h1>Skills Page</h1>
     </div>
   )
