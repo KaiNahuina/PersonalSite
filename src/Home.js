@@ -1,6 +1,65 @@
 import React, { useState } from 'react';
 import Background from './components/Background';
 import { motion } from 'framer-motion';
+import foodbank from './Media/foodbank.jpeg';
+import risktool from './Media/risktool.jpeg';
+import entity from './Media/entity.png';
+
+
+
+const Carousel = () => {
+  const images = [
+    { src: foodbank, caption: 'Foodbank Project', link: 'https://github.com/KaiNahuina/foodbank-project' },
+    { src: risktool, caption: 'Risk Assessment Tool', link: 'https://github.com/KaiNahuina/AppraisalTool'},
+    { src: entity, caption: 'Entity Solutions Ltd', link: 'https://entitysolutionsltd.com/'},
+  ];
+  
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
+
+  return (
+    <div className="relative mt-8 bg-gray-800 rounded-lg shadow-lg neumorphic mx-auto max-w-4xl p-4">
+      <img
+        src={images[currentIndex].src}
+        alt={`Slide ${currentIndex}`}
+        className="rounded-lg w-full object-contain" // Change object-cover to object-contain
+        style={{ height: 'auto', maxHeight: '60vh' }} // Keep the existing style
+      />
+
+      <div className="bottom-0 left-0 w-full p-4 text-center mt-4">
+        <p className="text-lg font-semibold text-white">{images[currentIndex].caption}</p>
+        <a 
+          href={images[currentIndex].link} // GitHub link
+          className="text-blue-400 hover:underline"
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          View Site
+        </a>
+      </div>
+      <button onClick={handlePrev} className="absolute left-2 top-1/2 transform -translate-y-1/2 p-2 rounded-full hover:shadow-xl transition duration-300 text-3xl">
+          &#8592; {/* Left arrow */}
+      </button>
+      <button onClick={handleNext} className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 rounded-full hover:shadow-xl transition duration-300 text-3xl">
+          &#8594; {/* Right arrow */}
+      </button>
+
+    </div>
+  );
+};
+
+
+
+
+
 
 function Home() {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
@@ -76,8 +135,9 @@ function Home() {
             </motion.div>
           )}
         </div>
-
+         
       </div>
+      <Carousel />
     </section>
   );
 }
